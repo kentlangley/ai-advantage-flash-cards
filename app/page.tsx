@@ -77,7 +77,7 @@ export default function Home() {
       <AnimatedGridPattern
         width={40}
         height={40}
-        strokeDasharray={2}
+        strokeDasharray="2"  // Changed from 2 to "2"
         numSquares={30}
         className="absolute inset-0 opacity-20 text-[#FB7344]"
         maxOpacity={0.3}
