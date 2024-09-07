@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import FlashCardForm from './components/FlashCardForm'
 import { Container, Title, Text } from '@mantine/core'
 import ShimmerButton from '../components/magicui/shimmer-button'
-import DotPattern from '../components/magicui/dot-pattern'
+import AnimatedGridPattern from '../components/magicui/animated-grid-pattern'
 import { defaultFlashCards } from './defaultFlashCards'
 import { QuestionMarkCircledIcon, CheckCircledIcon } from '@radix-ui/react-icons'
 
@@ -74,13 +74,14 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#FBF4EB] text-[#0B1415] relative overflow-hidden">
-      <DotPattern
-        width={32}
-        height={32}
-        cx={1}
-        cy={1}
-        cr={1}
-        className="absolute inset-0 opacity-10 text-[#FB7344]"
+      <AnimatedGridPattern
+        width={40}
+        height={40}
+        strokeDasharray={2}
+        numSquares={30}
+        className="absolute inset-0 opacity-20 text-[#FB7344]"
+        maxOpacity={0.3}
+        duration={8}
       />
       <div className="relative z-10 py-12 px-4 sm:px-6 lg:px-8">
         <Container size="xl">

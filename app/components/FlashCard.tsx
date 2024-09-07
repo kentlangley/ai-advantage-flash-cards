@@ -6,17 +6,19 @@ interface FlashCardProps {
   answer: string
 }
 
-export default function FlashCard({ question, answer }: FlashCardProps) {
+const FlashCard: React.FC<FlashCardProps> = ({ question, answer }) => {
   const [isFlipped, setIsFlipped] = useState(false)
 
   return (
     <Card shadow="sm" padding="lg" radius="md" withBorder onClick={() => setIsFlipped(!isFlipped)}>
-      <Text size="lg" weight={500}>
+      <Text size="lg" fw={500}>
         {isFlipped ? answer : question}
       </Text>
-      <Text size="sm" color="dimmed" mt="xs">
+      <Text size="sm" c="dimmed" mt="xs">
         {isFlipped ? 'Answer' : 'Question'}
       </Text>
     </Card>
   )
 }
+
+export default FlashCard
