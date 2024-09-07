@@ -38,6 +38,16 @@ export default function Home() {
     selectRandomCard(defaultFlashCards)
   }
 
+  const shuffleCards = () => {
+    if (flashCards.length === 0) {
+      // If no cards are loaded, load the default cards
+      loadDefaultCards()
+    } else {
+      // If cards are already loaded, just select a random card
+      selectRandomCard(flashCards)
+    }
+  }
+
   const selectRandomCard = (cards: FlashCardData[]) => {
     if (cards.length > 0) {
       const randomIndex = Math.floor(Math.random() * cards.length)
@@ -89,7 +99,7 @@ export default function Home() {
                 Create New Flash Card
               </ShimmerButton>
               <ShimmerButton
-                onClick={loadDefaultCards}
+                onClick={shuffleCards}  // Changed from loadDefaultCards to shuffleCards
                 className="flex-1 text-[#0B1415]"
                 background="rgba(251, 115, 68, 0.2)"  // Increased opacity
                 shimmerColor="rgba(251, 163, 99, 0.5)"  // Changed color and increased opacity
