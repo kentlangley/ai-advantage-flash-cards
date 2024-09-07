@@ -1,6 +1,10 @@
 'use client'
 
-import { MantineProvider } from '@mantine/core';
+import { MantineProvider, createTheme } from '@mantine/core';
+
+const theme = createTheme({
+  // Your theme customizations here
+});
 
 export default function ClientProvider({
   children,
@@ -8,7 +12,7 @@ export default function ClientProvider({
   children: React.ReactNode;
 }) {
   return (
-    <MantineProvider withGlobalStyles withNormalizeCSS>
+    <MantineProvider theme={theme}>
       {children}
     </MantineProvider>
   );
