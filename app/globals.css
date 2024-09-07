@@ -2,26 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 27 100% 98%;  /* #FBF4EB */
+    --foreground: 196 24% 6%;   /* #0B1415 */
+    --card: 27 94% 69%;         /* #FBA363 */
+    --card-foreground: 196 24% 6%;  /* #0B1415 */
+    --primary: 20 96% 62%;      /* #FB7344 */
+    --primary-foreground: 27 100% 98%;  /* #FBF4EB */
+    --secondary: 27 94% 69%;    /* #FBA363 */
+    --secondary-foreground: 196 24% 6%;  /* #0B1415 */
+    --muted: 27 94% 69%;        /* #FBA363 */
+    --muted-foreground: 196 24% 6%;  /* #0B1415 */
+    --accent: 20 96% 62%;       /* #FB7344 */
+    --accent-foreground: 27 100% 98%;  /* #FBF4EB */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 27 100% 98%;  /* #FBF4EB */
+    --border: 20 96% 62%;       /* #FB7344 */
+    --input: 27 94% 69%;        /* #FBA363 */
+    --ring: 20 96% 62%;         /* #FB7344 */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 196 24% 6%;   /* #0B1415 */
+    --foreground: 27 100% 98%;  /* #FBF4EB */
+    --card: 20 96% 62%;         /* #FB7344 */
+    --card-foreground: 27 100% 98%;  /* #FBF4EB */
+    --primary: 27 94% 69%;      /* #FBA363 */
+    --primary-foreground: 196 24% 6%;  /* #0B1415 */
+    --secondary: 20 96% 62%;    /* #FB7344 */
+    --secondary-foreground: 27 100% 98%;  /* #FBF4EB */
+    --muted: 20 96% 62%;        /* #FB7344 */
+    --muted-foreground: 27 100% 98%;  /* #FBF4EB */
+    --accent: 27 94% 69%;       /* #FBA363 */
+    --accent-foreground: 196 24% 6%;  /* #0B1415 */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 27 100% 98%;  /* #FBF4EB */
+    --border: 27 94% 69%;       /* #FBA363 */
+    --input: 20 96% 62%;        /* #FB7344 */
+    --ring: 27 94% 69%;         /* #FBA363 */
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
   }
 }
