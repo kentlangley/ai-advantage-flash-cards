@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import FlashCardForm from './components/FlashCardForm'
-import { Container, Title, Text, Button } from '@mantine/core'
+import { Container, Title, Text } from '@mantine/core'
 import ShimmerButton from '../components/magicui/shimmer-button'
 import DotPattern from '../components/magicui/dot-pattern'
 import { defaultFlashCards } from './defaultFlashCards'

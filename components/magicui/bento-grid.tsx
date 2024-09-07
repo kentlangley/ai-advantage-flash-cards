@@ -35,7 +35,7 @@ const BentoCard = ({
   name: string;
   className: string;
   background: ReactNode;
-  Icon: any;
+  Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>; // Changed from any
   description: string;
   href: string;
   cta: string;
