@@ -5,7 +5,7 @@ interface FlashCardFormProps {
   onSubmit: (question: string, answer: string) => void
 }
 
-export default function FlashCardForm({ onSubmit }: FlashCardFormProps) {
+const FlashCardForm: React.FC<FlashCardFormProps> = ({ onSubmit }) => {
   const [question, setQuestion] = useState('')
   const [answer, setAnswer] = useState('')
 
@@ -20,7 +20,7 @@ export default function FlashCardForm({ onSubmit }: FlashCardFormProps) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Stack spacing="md">
+      <Stack gap="md">
         <TextInput
           label="Question"
           placeholder="Enter the question"
@@ -35,10 +35,12 @@ export default function FlashCardForm({ onSubmit }: FlashCardFormProps) {
           onChange={(e) => setAnswer(e.target.value)}
           required
         />
-        <Button type="submit" color="blue" fullWidth>
+        <Button type="submit" className="bg-[#FB7344] hover:bg-[#FBA363] text-[#0B1415]">
           Add Flash Card
         </Button>
       </Stack>
     </form>
   )
 }
+
+export default FlashCardForm
